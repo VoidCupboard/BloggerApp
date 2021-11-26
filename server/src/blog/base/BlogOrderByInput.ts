@@ -14,6 +14,15 @@ class BlogOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+  author?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["Asc", "Desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
   createdAt?: SortOrder;
 
   @ApiProperty({

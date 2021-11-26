@@ -19,10 +19,11 @@ model User {
 }
 
 model Blog {
+  author      String?
   createdAt   DateTime @default(now())
   description String?
   id          String   @id @default(cuid())
-  likes       String?
+  likes       Int?
   title       String?
   updatedAt   DateTime @updatedAt
 }

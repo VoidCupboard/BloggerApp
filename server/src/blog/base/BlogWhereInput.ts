@@ -4,8 +4,20 @@ import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
 import { IsOptional } from "class-validator";
 import { StringFilter } from "../../util/StringFilter";
+import { IntNullableFilter } from "../../util/IntNullableFilter";
 @InputType()
 class BlogWhereInput {
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  author?: StringNullableFilter;
+
   @ApiProperty({
     required: false,
     type: StringNullableFilter,
@@ -30,14 +42,14 @@ class BlogWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: IntNullableFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => IntNullableFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => IntNullableFilter, {
     nullable: true,
   })
-  likes?: StringNullableFilter;
+  likes?: IntNullableFilter;
 
   @ApiProperty({
     required: false,
