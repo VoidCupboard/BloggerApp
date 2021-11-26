@@ -60,6 +60,7 @@ export class BlogControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        author: true,
         createdAt: true,
         description: true,
         id: true,
@@ -103,6 +104,7 @@ export class BlogControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
+        author: true,
         createdAt: true,
         description: true,
         id: true,
@@ -141,6 +143,7 @@ export class BlogControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        author: true,
         createdAt: true,
         description: true,
         id: true,
@@ -200,6 +203,7 @@ export class BlogControllerBase {
         where: params,
         data: data,
         select: {
+          author: true,
           createdAt: true,
           description: true,
           id: true,
@@ -239,6 +243,7 @@ export class BlogControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          author: true,
           createdAt: true,
           description: true,
           id: true,

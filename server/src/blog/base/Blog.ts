@@ -1,9 +1,20 @@
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsString, IsOptional } from "class-validator";
+import { IsString, IsOptional, IsDate, IsInt } from "class-validator";
 import { Type } from "class-transformer";
 @ObjectType()
 class Blog {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  author!: string | null;
+
   @ApiProperty({
     required: true,
   })
@@ -33,14 +44,14 @@ class Blog {
 
   @ApiProperty({
     required: false,
-    type: String,
+    type: Number,
   })
-  @IsString()
+  @IsInt()
   @IsOptional()
-  @Field(() => String, {
+  @Field(() => Number, {
     nullable: true,
   })
-  likes!: string | null;
+  likes!: number | null;
 
   @ApiProperty({
     required: false,
