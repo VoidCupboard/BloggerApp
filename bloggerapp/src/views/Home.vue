@@ -1,5 +1,13 @@
 <template>
+<div class="wrapper">
 
+    <div class="container">
+        <br><br><br>
+        <h1 class="center-align">Welcome to Blogger App</h1>
+        <br><br>
+        <h5 class="center-align">Read all the blog posts <a href="/blogs">here</a></h5>
+    </div>
+</div>
 </template>
 
 <script>
@@ -36,6 +44,11 @@ export default {
             );
             if (match) return match[2];
         },
+        logout: function(){
+            document.cookie = "username=;password=;"
+
+            window.location.reload()
+        }
     },
 };
 </script>

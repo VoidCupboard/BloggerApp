@@ -53,6 +53,7 @@ export default {
                     },
                     body: JSON.stringify({
                         title: this.title,
+                        author: this.getCookie("username"),
                         description: this.desc
                     })
                 })

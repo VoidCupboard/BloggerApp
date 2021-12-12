@@ -33,6 +33,7 @@ export default {
             })
             .then(res => res.json())
             .then(data => {
+                console.log(data.accessToken)
                 if(!data.accessToken){
                     alert("Invalid Credentials")
                 } else {
