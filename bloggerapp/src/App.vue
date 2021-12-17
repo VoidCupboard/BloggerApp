@@ -1,12 +1,28 @@
 <template>
-  <nav>
-      <div class="nav-item" v-on:click="logout()">Logout</div>
-  </nav>
-  <router-view/>
+<div class="wrapper">
+    <NavBar />
+    <router-view />
+</div>
 </template>
 
 <style>
-@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css");
+@import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
 
+body {
+    background-color: #2E3440;
+    height: 100%;
+}
 </style>
+
+<script>
+import NavBar from "./components/NavBar.vue"
+
+export default {
+    name: "App",
+    components: {
+        NavBar
+    }
+}
+</script>

@@ -1,24 +1,49 @@
 <template>
 <div class="wrapper">
-
-    <div class="container">
-        <br><br><br>
-        <h1 class="center-align">Welcome to Blogger App</h1>
-        <br><br>
-        <h5 class="center-align">Read all the blog posts <a href="/blogs">here</a></h5>
-    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="text-center text-5xl header" style="line-height: 70px">Welcome to Blogger App</div>
+    <br><br>
+    <h5 class="text-center text-xl">Read all the blog posts <a href="/blogs">here</a></h5>
 </div>
 </template>
 
-<script>
-import authenticate from "../utils/authenticate";
+<style scoped>
 
+.wrapper {
+    color: #D8DEE9;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    font-family: "Comfortaa";
+}
+
+a {
+    color: #88C0D0
+}
+
+.header {
+    color: #88C0D0
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+</style>
+
+<script>
 export default {
     name: "Home",
     mounted() {
         const username = this.getCookie("username");
         const password = this.getCookie("password");
-        
+
         fetch("http://localhost:3000/api/login", {
                 headers: {
                     "Authorization": "Basic YWRtaW46YWRtaW4=",
@@ -33,7 +58,9 @@ export default {
             .then(res => res.json())
             .then(data => {
                 if (!data.accessToken) {
-                    this.$router.push({ path: "/signin" })
+                    this.$router.push({
+                        path: "/signin"
+                    })
                 }
             })
     },
@@ -44,7 +71,7 @@ export default {
             );
             if (match) return match[2];
         },
-        logout: function(){
+        logout: function () {
             document.cookie = "username=;password=;"
 
             window.location.reload()

@@ -1,9 +1,12 @@
 <template>
-<div class="container">
-    <h2 class="center-align">Create a new blog</h2>
-    <input type="text" v-model="title" placeholder="Enter the title">
-    <textarea name="desc" v-model="desc" placeholder="Enter the description"></textarea>
-    <button class="btn" style="width: 100%" v-on:click="addBlogPost()">Sumbit</button>
+<div class="_container">
+    <h2 class="text-center text-4xl">Create a new blog</h2>
+    <br><br>
+    <input type="text" placeholder="Choose a good title..." class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full"/>
+    <br><br>
+    <textarea name="desc" v-model="desc" placeholder="Enter the description" class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full"></textarea>
+    <br><br>
+    <button class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full" style="width: 100%" v-on:click="addBlogPost()">Sumbit</button>
 </div>
 </template>
 
@@ -72,3 +75,33 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+._container{
+    color: #D8DEE9;
+    font-family: "Comfortaa";
+    margin: 80px
+}
+
+input , textarea , button{
+    background-color: #3B4252 !important;
+    color: #D8DEE9;
+    height: 50px;
+    resize: none;
+    padding-left: 20px !important;
+}
+
+button{
+    height: 70px;
+    font-size: 20px !important;
+}
+
+textarea{
+    height: 300px;
+    padding: 20px !important;
+}
+
+input:focus , textarea:focus , button:hover{
+    border: 3px solid #88C0D0 !important;
+}
+</style>
