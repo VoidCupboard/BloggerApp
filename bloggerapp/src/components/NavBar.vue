@@ -1,5 +1,5 @@
 <template>
-<nav style="background-color: #3B4252">
+<nav style="background-color: #3B4252;">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -15,7 +15,7 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <span style="color: #D8DEE9; font-family: Comfortaa; font-weight: bold; letter-spacing: 3px">BloggerApp</span>
+                    <a href="/" style="color: #D8DEE9; font-family: Comfortaa; font-weight: bold; letter-spacing: 3px">BloggerApp</a>
                 </div>
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
@@ -31,9 +31,13 @@
 
                 <div class="ml-3 relative">
                     <div>
-                        <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                        </button>
+                        <a href="/signin" class="text-black">
+                            <button>Sign In</button>
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/signup" class="text-black">
+                            <button>Sign Up</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -61,5 +65,18 @@ a{
     color: #D8DEE9;
     font-family: "Comfortaa";
     font-size: 15px !important;
+}
+
+button{
+    background-color: #88C0D0;
+    width: 130px;
+    height: 45px;
+    font-size: 17px;
+    border-radius: 5px;
+    font-family: "Comfortaa";
+}
+
+.text-black{
+    color: #2E3440 !important;
 }
 </style>

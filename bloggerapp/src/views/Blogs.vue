@@ -7,17 +7,20 @@
     <br><br>
     <div class="wrapper flex flex-wrap">
         <div class="cards" v-for="blog in blogs" v-bind:key="blog">
-            <div class="max-w-md py-4 px-8 rounded-lg my-20 ml-10 mr-10" style="background-color: #3B4252; color: #D8DEE9; padding-top: 30px">
-                <div style="width: 500px">
-                    <h2 class="text-3xl font-semibold">{{blog.title}}</h2>
+            <a :href="'/blog/' + blog.id">
+                <div class="max-w-md py-4 px-8 rounded-lg my-20 ml-10 mr-10" style="background-color: #3B4252; color: #D8DEE9; padding-top: 30px">
+                    <div style="width: 500px">
+                        <h2 class="text-3xl font-semibold">{{blog.title}}</h2>
+                        <br>
+                        <p class="mt-2 leading-8">{{blog.description}}</p>
+                    </div>
                     <br>
-                    <p class="mt-2 leading-8">{{blog.description}}</p>
+                    <div class="flex justify-end mt-4">
+                        <a href="#" class="text-xl font-medium author">{{blog.author}}</a>
+                    </div>
                 </div>
-                <br>
-                <div class="flex justify-end mt-4">
-                    <a href="#" class="text-xl font-medium author">{{blog.author}}</a>
-                </div>
-            </div>
+            </a>
+            
         </div>
     </div>
 </div>

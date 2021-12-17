@@ -1,24 +1,26 @@
 <template>
-    <div class="container">
-        <h2 class="center-align">{{blog.title}}</h2>  
-        <div class="utils" v-if="author == currUser">
-            <button class="btn" v-on:click="editPost()">Edit this post</button>
-            <button class="btn" v-on:click="deletePost()">Delete this post</button>
-
-        </div>     
-        <br>
-        <span class="description">{{blog.description}}</span>
-        <br>
-        <hr>
-        <br>
+    <div class="_container">
+        <br><br><br>
+        <div class="text-center text-4xl">{{blog.title}}</div>  
+        <br><br><br>
+        <div class="content">
+            <div class="utils flex flex-wrap" v-if="author == currUser">
+                <button class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full" style="width: 100%" v-on:click="editPost()">Edit this post</button>
+                <button class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full" style="width: 100%" v-on:click="deletePost()">Delete this post</button>
+            </div>     
+            <br><br>
+            <span class="description text-xl text-center">{{blog.description}}</span>
+            <br>
+        </div>
         <div class="like" style="display: flex">
-            <i class="fas fa-heart" :style="`font-size: 40px; color: ${color}`" v-on:click="likePost()"></i>
-            <div class="likes" style="padding-left: 50px">Liked by {{blog.likes}} users</div>
+            <i class="fas fa-heart heart" :style="'color: ' + color" v-on:click="likePost()"></i>
+            <span class="heart-count" >{{blog.likes}}</span>
         </div>
     </div>
 </template>
 
 <script>
+
 export default {
     name: "Blog",
     data(){
@@ -26,7 +28,7 @@ export default {
             blog: {},
             author: "",
             currUser: "",
-            color: "black"
+            color: "#D8DEE9"
         }
     },
     mounted(){
@@ -36,7 +38,7 @@ export default {
 
         if(likedPosts){
             if(likedPosts.includes(this.$route.params.id)){
-                this.color = "red"
+                this.color = "#BF616A"
             }
         }
 
@@ -99,7 +101,7 @@ export default {
                     })
                 })
 
-                this.color = "black"
+                this.color = "#D8DEE9"
             } else {
                 likedPosts.push(this.$route.params.id)
 
@@ -115,10 +117,47 @@ export default {
                     })
                 })
 
-                this.color = "red"
+                this.color = "#BF616A"
             }
             window.localStorage.setItem("likedPosts" , JSON.stringify(likedPosts))
         }
     }
 }
 </script>
+
+<style scoped>
+._container{
+    color: #D8DEE9;
+    font-family: "Comfortaa";
+}
+
+.heart{
+    color: #BF616A;
+    font-size: 50px;
+    padding-left: 70px;
+    padding-top: 280px;
+}
+
+.heart-count{
+    position: relative;
+    left: -35px;
+    font-size: 30px;
+    padding-top: 350px;
+}
+
+.like{
+    position: fixed;
+    height: 100%;
+    top: 0%;
+}
+
+.content{
+    margin-left: 200px;    
+}
+
+button{
+    background-color: #3B4252;
+    width: 45% !important;
+    margin-right: 5%;
+}
+</style>

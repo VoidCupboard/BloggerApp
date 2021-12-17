@@ -2,7 +2,7 @@
 <div class="_container">
     <h2 class="text-center text-4xl">Create a new blog</h2>
     <br><br>
-    <input type="text" placeholder="Choose a good title..." class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full"/>
+    <input type="text" placeholder="Choose a good title..." class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full" v-model="title"/>
     <br><br>
     <textarea name="desc" v-model="desc" placeholder="Enter the description" class="px-3 py-3 relative rounded text-sm border-0 shadow outline-none w-full"></textarea>
     <br><br>
