@@ -1,19 +1,19 @@
 {
-  "dataServiceGeneratorVersion": "0.10.2",
+  "dataServiceGeneratorVersion": "0.10.3",
   "appInfo": {
-    "name": "My app",
+    "name": "My app-1",
     "description": "",
-    "version": "4cvrav1i",
-    "id": "ckwdh7sj513925481bs6wfh4p3ro",
-    "url": "https://app.amplication.com/ckwdh7sj513925481bs6wfh4p3ro",
+    "version": "n7m760ta",
+    "id": "ckxk1senf4310051bs6jc6uekqv",
+    "url": "https://app.amplication.com/ckxk1senf4310051bs6jc6uekqv",
     "settings": {
-      "dbHost": "localhost",
-      "dbName": "",
-      "dbPassword": "admin",
+      "dbHost": "db.coiniyhmiutvatqjfbmz.supabase.co",
+      "dbName": "postgres",
+      "dbPassword": "@r00tr0x1212",
       "dbPort": 5432,
-      "dbUser": "admin",
-      "appId": "ckwdh7sj513925481bs6wfh4p3ro",
-      "authProvider": "Http"
+      "dbUser": "postgres",
+      "appId": "ckxk1senf4310051bs6jc6uekqv",
+      "authProvider": "Jwt"
     }
   }
 }
