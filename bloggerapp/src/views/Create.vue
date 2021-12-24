@@ -21,6 +21,8 @@ export default {
     },
     methods: {
         addBlogPost: function () {
+            const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+
             const username = this.getCookie("username");
             const password = this.getCookie("password")
 
@@ -30,7 +32,7 @@ export default {
 
             fetch("https://amplicationbloggerapp.herokuapp.com/api/login", {
                     headers: {
-                        "Authorization": "Basic YWRtaW46YWRtaW4=",
+                        "Authorization": "Basic " + ACCESS_TOKEN,
                         "Content-Type": "application/json"
                     },
                     method: "POST",
@@ -52,7 +54,7 @@ export default {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "Basic YWRtaW46YWRtaW4="
+                        "Authorization": "Basic " + ACCESS_TOKEN
                     },
                     body: JSON.stringify({
                         title: this.title,

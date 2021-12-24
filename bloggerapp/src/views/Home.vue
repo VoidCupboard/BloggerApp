@@ -43,10 +43,12 @@ export default {
     mounted() {
         const username = this.getCookie("username");
         const password = this.getCookie("password");
+        const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+
 
         fetch("https://amplicationbloggerapp.herokuapp.com/api/login", {
                 headers: {
-                    "Authorization": "Basic YWRtaW46YWRtaW4=",
+                    "Authorization": "Basic " + ACCESS_TOKEN,
                     "Content-Type": "application/json"
                 },
                 method: "POST",

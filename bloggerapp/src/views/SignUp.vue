@@ -25,11 +25,13 @@ export default {
     },
     methods: {
         createUser: function(){
+            const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+
             fetch("https://amplicationbloggerapp.herokuapp.com/api/users/" , {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Basic YWRtaW46YWRtaW4="
+                    "Authorization": "Basic " + ACCESS_TOKEN
                 },
                 body: JSON.stringify({
                     firstName: this.firstName,

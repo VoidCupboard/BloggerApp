@@ -37,10 +37,12 @@ export default {
         }
     },
     mounted() {
+        const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+
         fetch("https://amplicationbloggerapp.herokuapp.com/api/blogs", {
                 method: "GET",
                 headers: {
-                    "Authorization": "Basic YWRtaW46YWRtaW4="
+                    "Authorization": "Basic " + ACCESS_TOKEN
                 }
             })
             .then(res => res.json())

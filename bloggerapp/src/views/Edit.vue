@@ -23,10 +23,13 @@ export default {
     mounted() {
         this.id = this.$route.params.id
 
+        const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+
+
         fetch(`https://amplicationbloggerapp.herokuapp.com/api/blogs/${this.id}`, {
                 method: "GET",
                 headers: {
-                    "Authorization": "Basic YWRtaW46YWRtaW4="
+                    "Authorization": "Basic " + ACCESS_TOKEN
                 }
             })
             .then(res => res.json())
@@ -54,7 +57,7 @@ export default {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "Basic YWRtaW46YWRtaW4="
+                        "Authorization": "Basic " + ACCESS_TOKEN
                     },
                     body: JSON.stringify({
                         id: this.id,

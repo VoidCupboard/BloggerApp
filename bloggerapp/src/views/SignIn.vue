@@ -23,11 +23,13 @@ export default {
     },
     methods: {
         authenticate() {
+            const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+
             fetch("https://amplicationbloggerapp.herokuapp.com/api/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "Basic YWRtaW46YWRtaW4="
+                        "Authorization": "Basic " + ACCESS_TOKEN
                     },
                     body: JSON.stringify({
                         username: this.username,
