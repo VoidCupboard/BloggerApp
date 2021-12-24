@@ -25,7 +25,7 @@ export default {
     },
     methods: {
         createUser: function(){
-            fetch("http://localhost:3000/api/users/" , {
+            fetch("https://amplicationbloggerapp.herokuapp.com/api/users/" , {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

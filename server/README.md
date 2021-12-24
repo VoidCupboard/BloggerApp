@@ -7,7 +7,7 @@ In the project directory you can run:
 ### `npm start`
 
 Runs the app in the development mode.
-By default, it is accessible at http://localhost:3000
+By default, it is accessible at https://amplicationbloggerapp.herokuapp.com
 
 ### `npm test`
 

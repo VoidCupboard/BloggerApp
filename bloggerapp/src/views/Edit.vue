@@ -23,7 +23,7 @@ export default {
     mounted() {
         this.id = this.$route.params.id
 
-        fetch(`http://localhost:3000/api/blogs/${this.id}`, {
+        fetch(`https://amplicationbloggerapp.herokuapp.com/api/blogs/${this.id}`, {
                 method: "GET",
                 headers: {
                     "Authorization": "Basic YWRtaW46YWRtaW4="
@@ -50,7 +50,7 @@ export default {
             if (match) return match[2];
         },
         editPost: function () {
-            fetch(`http://localhost:3000/api/blogs/${this.id}`, {
+            fetch(`https://amplicationbloggerapp.herokuapp.com/api/blogs/${this.id}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",

@@ -44,7 +44,7 @@ export default {
         const username = this.getCookie("username");
         const password = this.getCookie("password");
 
-        fetch("http://localhost:3000/api/login", {
+        fetch("https://amplicationbloggerapp.herokuapp.com/api/login", {
                 headers: {
                     "Authorization": "Basic YWRtaW46YWRtaW4=",
                     "Content-Type": "application/json"

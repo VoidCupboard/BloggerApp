@@ -37,7 +37,7 @@ export default {
         }
     },
     mounted() {
-        fetch("http://localhost:3000/api/blogs", {
+        fetch("https://amplicationbloggerapp.herokuapp.com/api/blogs", {
                 method: "GET",
                 headers: {
                     "Authorization": "Basic YWRtaW46YWRtaW4="

@@ -28,7 +28,7 @@ export default {
                 alert("Fields cannot be empty!")
             }
 
-            fetch("http://localhost:3000/api/login", {
+            fetch("https://amplicationbloggerapp.herokuapp.com/api/login", {
                     headers: {
                         "Authorization": "Basic YWRtaW46YWRtaW4=",
                         "Content-Type": "application/json"
@@ -48,7 +48,7 @@ export default {
                     }
                 })
 
-            fetch("http://localhost:3000/api/blogs", {
+            fetch("https://amplicationbloggerapp.herokuapp.com/api/blogs", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

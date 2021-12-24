@@ -1,7 +1,7 @@
 module.exports = function(username , password){
     console.log(username, password)
     window.flag = false
-    fetch("http://localhost:3000/api/login" , {
+    fetch("https://amplicationbloggerapp.herokuapp.com/api/login" , {
         headers: {
             "Authorization": "Basic YWRtaW46YWRtaW4=",
             "Content-Type": "application/json"

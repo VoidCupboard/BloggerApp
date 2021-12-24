@@ -43,7 +43,7 @@ export default {
         }
 
 
-        fetch(`http://localhost:3000/api/blogs/${this.$route.params.id}` , {
+        fetch(`https://amplicationbloggerapp.herokuapp.com/api/blogs/${this.$route.params.id}` , {
             method: "GET",
             headers: {
                 "Authorization": "Basic YWRtaW46YWRtaW4="
@@ -89,7 +89,7 @@ export default {
 
                 likedPosts = temp
 
-                fetch(`http://localhost:3000/api/blogs/${this.$route.params.id}` , {
+                fetch(`https://amplicationbloggerapp.herokuapp.com/api/blogs/${this.$route.params.id}` , {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default {
             } else {
                 likedPosts.push(this.$route.params.id)
 
-                fetch(`http://localhost:3000/api/blogs/${this.$route.params.id}` , {
+                fetch(`https://amplicationbloggerapp.herokuapp.com/api/blogs/${this.$route.params.id}` , {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",

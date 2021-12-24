@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         authenticate() {
-            fetch("http://localhost:3000/api/login", {
+            fetch("https://amplicationbloggerapp.herokuapp.com/api/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
